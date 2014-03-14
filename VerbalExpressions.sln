@@ -1,16 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerbalExpressions", "VerbalExpressions\VerbalExpressions.csproj", "{A3EF47F0-704F-4155-BAC7-DD919B957CC0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerbalExpressionsUnitTests", "VerbalExpressionsUnitTests\VerbalExpressionsUnitTests.csproj", "{DA5044A2-4E99-454F-A627-6DC3B861EC44}"
-EndProject
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B6E2FF23-4F02-434B-941F-F48BD0092C32}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerbalExpressions", "VerbalExpressions\VerbalExpressions.csproj", "{A3EF47F0-704F-4155-BAC7-DD919B957CC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerbalExpressionsUnitTests", "VerbalExpressionsUnitTests\VerbalExpressionsUnitTests.csproj", "{DA5044A2-4E99-454F-A627-6DC3B861EC44}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -193,7 +193,7 @@ namespace CSharpVerbalExpressions
         public VerbalExpressions SomethingBut(string value, bool sanitize = true)
         {
             value = sanitize ? Sanitize(value) : value;
-            value = string.Format("([^" + value + "]+)");
+            value = string.Format("([^{0}]+)", value);
             return Add(value, false);
         }
 

@@ -106,6 +106,13 @@ Backup*/
 UpgradeLog*.XML
 UpgradeLog*.htm
 
+#Tooling
+_ReSharper*/
+*.resharper
+[Tt]est[Rr]esult*
+*.sass-cache
+.klocwork/
+
 #Keep release binaries
 !VerbalExpressions/bin/Release/
 #But not unittests

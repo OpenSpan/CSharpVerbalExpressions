@@ -161,10 +161,10 @@ namespace CSharpVerbalExpressions
             return Then(value);
         }
 
-        public VerbalExpressions Maybe(string value, bool sanitize = true)
+        public VerbalExpressions Maybe(string value, bool sanitize = true, bool lazy = false)
         {
             value = sanitize ? Sanitize(value) : value;
-            value = string.Format("({0})?", value);
+            value = string.Format("({0}){1}", value, lazy ? "??" : "?");
             return Add(value, false);
         }
 
@@ -173,27 +173,27 @@ namespace CSharpVerbalExpressions
             return Maybe(commonRegex.Name, sanitize: false);
         }
 
-        public VerbalExpressions Anything()
+        public VerbalExpressions Anything(bool lazy = true)
         {
-            return Add("(.*)", false);
+            return Add(string.Format("(.{0})", lazy ? "*?" : "*"), false);
         }
 
-        public VerbalExpressions AnythingBut(string value, bool sanitize = true)
+        public VerbalExpressions AnythingBut(string value, bool sanitize = true, bool lazy = true)
         {
             value = sanitize ? Sanitize(value) : value;
-            value = string.Format("([^{0}]*)", value);
+            value = string.Format("([^{0}]{1})", value, lazy ? "*?" : "*");
             return Add(value, false);
         }
 
-        public VerbalExpressions Something()
+        public VerbalExpressions Something(bool lazy = true)
         {
-            return Add("(.+)", false);
+            return Add(string.Format("(.{0})", lazy ? "+?" : "+"), false);
         }
 
-        public VerbalExpressions SomethingBut(string value, bool sanitize = true)
+        public VerbalExpressions SomethingBut(string value, bool sanitize = true, bool lazy = true)
         {
             value = sanitize ? Sanitize(value) : value;
-            value = string.Format("([^{0}]+)", value);
+            value = string.Format("([^{0}]{1})", value, lazy ? "+?" : "+");
             return Add(value, false);
         }
 
@@ -312,7 +312,7 @@ namespace CSharpVerbalExpressions
             return Add(sb.ToString(), false);
         }
 
-        public VerbalExpressions Multiple(string value, bool sanitize = true)
+        public VerbalExpressions Multiple(string value, bool sanitize = true, bool lazy = true)
         {
             if (string.IsNullOrEmpty(value))
             {
@@ -320,7 +320,7 @@ namespace CSharpVerbalExpressions
             }
 
             value = sanitize ? this.Sanitize(value) : value;
-            value = string.Format(@"({0})+", value);
+            value = string.Format(@"({0}){1}", value, lazy ? "+?" : "+");
 
             return Add(value, false);
         }

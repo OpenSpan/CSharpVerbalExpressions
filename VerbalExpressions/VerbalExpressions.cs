@@ -236,8 +236,7 @@ namespace CSharpVerbalExpressions
                 throw new ArgumentNullException("value");
             }
 
-            value = sanitize ? Sanitize(value) : value;
-            value = string.Format("[{0}]", Sanitize(value));
+            value = string.Format("[{0}]", sanitize ? Sanitize(value) : value);
             return Add(value, false);
         }
 
